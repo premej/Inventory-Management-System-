@@ -4,7 +4,7 @@ Introduction
 Project Overview: Start with a brief overview of your project.
 "I developed an Inventory Management System using Angular for the frontend, SQL Server Management Studio (SSMS) for the database, and C# with the .NET framework for the backend. This system helps users manage their inventory by tracking stock levels, recording purchases from suppliers, and sales to customers."
 Main Features
-Core Functionalities: Highlight the main features of your system.
+
 "The system allows users to:
 1. Track the current stock and details of products.
 2. Update product information, including minimum and maximum quantities and prices.
