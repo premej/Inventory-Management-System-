@@ -1,0 +1,105 @@
+.approved-users {
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f4c3, #e8f5e9);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.approved-users h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #388e3c;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Styles for the card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Styles for individual cards */
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(135deg, #388e3c, #2e7d32);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for card content */
+.card-content {
+    padding: 20px;
+    text-align: center;
+    color: #2e7d32;
+}
+
+.card-content h3 {
+    font-weight: bold;
+    margin: 0 0 10px;
+    font-size: 1.8em;
+    color: #2e7d32;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.card-content p {
+    margin: 0 0 5px;
+    color: #2e7d32;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effects for card content */
+.card-content h3:hover {
+    color: #388e3c;
+    text-shadow: 0 0 5px rgba(56, 142, 60, 0.5);
+}
+
+.card-content p:hover {
+    color: #388e3c;
+    text-shadow: 0 0 5px rgba(56, 142, 60, 0.5);
+}
+
+/* Styles for remove button */
+.card-content .btn-remove {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f44336;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.card-content .btn-remove:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}

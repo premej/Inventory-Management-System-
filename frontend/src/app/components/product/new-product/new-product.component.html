@@ -1,0 +1,52 @@
+<app-sidebar></app-sidebar>
+<app-productmenu></app-productmenu>
+<div class="container">
+    <div class="heading">Add New Product</div>
+    <form class="form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" [(ngModel)]="product.productName" name="productName" required>
+            </div>
+            <div class="form-group">
+                <label for="productDetail">Product Detail</label>
+                <input type="text" class="form-control" [(ngModel)]="product.product_detail" name="productDetail" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="categoryId">Category ID</label>
+                <input type="number" class="form-control" [(ngModel)]="product.category_id" name="categoryId" required>
+            </div>
+            <div class="form-group">
+                <label for="categoryName">Category Name</label>
+                <input type="text" class="form-control" [(ngModel)]="product.category_Name" name="categoryName" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" class="form-control" [(ngModel)]="product.amount" name="amount" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <button type="button" class="btn btn-primary" (click)="addNewProduct()">Add Product</button>
+            <button type="button" class="btn btn-secondary" (click)="checkCategories()">Check Categories</button>
+        </div>
+    </form>
+    <!-- <div *ngIf="categories.length > 0" class="categories-list">
+        <h3>Available Categories</h3>
+        <ul>
+            <li *ngFor="let category of categories">{{ category.category_Name }} (Category ID: {{ category.category_id }})</li>
+        </ul>
+    </div> -->
+</div>
+<div class="modal" *ngIf="showCategoriesModal">
+    <div class="modal-content">
+        <span class="close" (click)="closeCategoriesModal()">&times;</span>
+        <h3>Available Categories</h3>
+        <ul>
+            <li *ngFor="let category of categories">{{ category.category_Name }} (Category ID: {{ category.category_id }})</li>
+        </ul>
+    </div>
+</div>

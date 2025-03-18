@@ -1,0 +1,15 @@
+<!-- <app-sidebar></app-sidebar> -->
+<app-controls></app-controls>
+<div class="approved-users">
+  <h2>Approved Users</h2>
+  <div class="card-container">
+    <div class="card" *ngFor="let user of approvedUsers">
+      <div class="card-content">
+        <h3>👤 {{ user.username }}</h3>
+        <p><strong>User Id:</strong> {{ user.uSerId }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <button class="btn-remove" (click)="removeUser(user)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

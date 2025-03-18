@@ -1,0 +1,17 @@
+<app-controls></app-controls>
+<div class="pending-requests">
+  <h2>Pending Requests</h2>
+  <div class="card-container">
+    <div class="card" *ngFor="let request of pendingRequests">
+      <div class="card-content">
+        <h3>⏳ {{ request.name }}</h3>
+        <p><strong>ID:</strong> {{ request.id }}</p>
+        <p><strong>Approved:</strong> {{ request.isapproved ? 'Yes' : 'No' }}</p>
+        <div class="actions">
+          <button class="btn-approve" (click)="approveRequest(request)">Approve</button>
+          <button class="btn-leave">Leave</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

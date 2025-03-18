@@ -1,0 +1,29 @@
+<h2>Admin Controls</h2>
+<label class="main">
+    Menu
+    <input class="inp" checked="" type="checkbox" />
+    <div class="bar">
+      <span class="top bar-list"></span>
+      <span class="middle bar-list"></span>
+      <span class="bottom bar-list"></span>
+    </div>
+    <section class="menu-container">
+      <div class="menu-list"><a (click)="navigateTo('pendingreq')">Pending Requests</a></div>
+      <div class="menu-list"><a (click)="navigateTo('approvedusers')">Approved Users</a></div>
+    </section>
+  </label>
+  <div class="inventory-card">
+    <div class="inventory-info">
+      <i class="fa fa-boxes fa-lg"></i>
+      <h3>Manage Inventory</h3>
+      <button class="inventory-controls-btn" (click)="navigateTo('outofstock')">Inventory Controls</button>
+    </div>
+  </div>
+  <div class="user-info">
+    <i class="fas fa-user-circle user-icon" (click)="toggleUserDetails()"></i>
+  </div>
+  <div class="user-details" *ngIf="showUserDetails">
+    <p><strong>Name:</strong> {{ username }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Role:</strong> {{ role }}</p>
+  </div>

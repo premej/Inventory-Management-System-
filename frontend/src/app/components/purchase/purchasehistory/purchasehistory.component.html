@@ -1,0 +1,17 @@
+<app-sidebar></app-sidebar>
+<app-purchasemenu></app-purchasemenu>
+<div class="container">
+  <div class="heading">Purchase History</div>
+  <div class="card-container">
+    <div class="card" *ngFor="let purchase of purchaseList">
+      <div class="card-content">
+        <h3>📦 {{ purchase.productName }}</h3>
+        <p><strong>Type:</strong> {{ purchase.type }}</p>
+        <p><strong>Date:</strong> {{ purchase.date | date:'short' }}</p>
+        <p><strong>Amount:</strong> {{ purchase.amount | currency :'INR'}}</p>
+        <p><strong>Supplier Name:</strong> {{ purchase.supplierName }}</p>
+        <p><strong>Quantity:</strong> {{ purchase.quantity }}</p>
+      </div>
+    </div>
+  </div>
+</div>

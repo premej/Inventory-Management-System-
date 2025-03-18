@@ -1,0 +1,38 @@
+<app-sidebar></app-sidebar>
+<app-productmenu></app-productmenu>
+<div class="categories">
+    <h2>Categories</h2>
+    <button class="add-category-btn" (click)="showAddCategoryForm = true">Add New Category</button>
+    
+    <div *ngIf="showAddCategoryForm" class="add-category-form">
+        <h3>Add New Category</h3>
+        <form (ngSubmit)="onAddCategory()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" [(ngModel)]="newCategory.category_Name" name="name" required>
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="button" class="cancel-btn" (click)="showAddCategoryForm = false">Cancel</button>
+        </form>
+    </div>
+    
+    <div *ngIf="editCategory" class="edit-category-form">
+        <h3>Edit Category</h3>
+        <form (ngSubmit)="onUpdateCategory()">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" [(ngModel)]="editCategory.category_Name" name="editName" required>
+            <button type="submit" class="submit-btn">Update</button>
+            <button type="button" class="cancel-btn" (click)="editCategory = null">Cancel</button>
+        </form>
+    </div>
+    
+    <div class="card-container">
+        <div class="card" *ngFor="let category of categoriesList">
+            <div class="card-content">
+                <i class="fa fa-tags fa-2x"></i>
+                <h3>{{ category.category_Name }}</h3>
+                <p><strong>Category ID:</strong> {{ category.category_id }}</p>
+                <button class="edit-btn" (click)="onEditCategory(category)">Edit</button>
+                <button class="delete-btn" (click)="onDeleteCategory(category.category_id)">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>

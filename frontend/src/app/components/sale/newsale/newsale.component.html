@@ -1,0 +1,40 @@
+<app-sidebar></app-sidebar>
+<app-salesmenu></app-salesmenu>
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        New Sale
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">
+                <label for="customerId">Customer ID</label>
+                <input type="number" class="form-control" id="customerId" [(ngModel)]="saleObj.customer_id">
+            </div>
+            <div class="col-3">
+                <label for="customerName">Customer Name</label>
+                <input type="text" class="form-control" id="customerName" [(ngModel)]="saleObj.customername">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label for="productId">Product ID</label>
+                <input type="number" class="form-control" id="productId" [(ngModel)]="saleObj.productid" (blur)="checkStock()">
+                <div *ngIf="stockAvailability !== null" class="stock-availability mt-2">
+                    <small class="text-success">Stock Available: {{ stockAvailability }}</small>
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" id="quantity" [(ngModel)]="saleObj.quantity">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-3 text-end">
+                <button class="btn btn-sm btn-secondary" (click)="navigateTo('reviewinventory')">Go To List</button>
+            </div>
+            <div class="col-3 text-center">
+                <button class="btn btn-sm btn-success" (click)="onSave()">Save Sale</button>
+            </div>
+        </div>
+    </div>
+</div>

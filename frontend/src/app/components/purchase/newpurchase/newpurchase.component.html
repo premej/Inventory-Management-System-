@@ -1,0 +1,37 @@
+<app-sidebar></app-sidebar>
+<app-purchasemenu></app-purchasemenu>
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        New Purchase
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">
+                <label for="supplierId">Supplier ID</label>
+                <input type="number" class="form-control" id="supplierId" [(ngModel)]="purchaseObj.supplier_id">
+            </div>
+            <div class="col-3">
+                <label for="supplierName">Supplier Name</label>
+                <input type="text" class="form-control" id="supplierName" [(ngModel)]="purchaseObj.suppliername">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label for="productId">Product ID</label>
+                <input type="number" class="form-control" id="productId" [(ngModel)]="purchaseObj.productid">
+            </div>
+            <div class="col-3">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" id="quantity" [(ngModel)]="purchaseObj.quantity">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-3 text-end">
+                <button class="btn btn-sm btn-secondary" (click)="navigateTo('reviewinventory')">Go To List</button>
+            </div>
+            <div class="col-3 text-center">
+                <button class="btn btn-sm btn-success" (click)="onSave()">Save Purchase</button>
+            </div>
+        </div>
+    </div>
+  </div>

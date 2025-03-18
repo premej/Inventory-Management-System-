@@ -1,0 +1,14 @@
+<app-sidebar></app-sidebar>
+<app-stockmenu></app-stockmenu>
+<div class="review-inventory">
+    <h2>Over Stock Products</h2>
+    <div class="stock-cards">
+        <div class="stock-card" *ngFor="let item of stockList">
+            <h3>📦📈 {{ item.productName }}</h3>
+            <p><strong>Item ID:</strong> {{ item.productId }}</p>
+            <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+            <p><strong>Date:</strong> {{ item.last_modified | date:'short' }}</p>
+            <p><strong>Maximum Quantity:</strong> {{ item.maxquantity }}</p>
+        </div>
+    </div>
+</div>

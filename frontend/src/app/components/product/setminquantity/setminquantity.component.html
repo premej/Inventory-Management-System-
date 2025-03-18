@@ -1,0 +1,21 @@
+<app-sidebar></app-sidebar>
+<app-productmenu></app-productmenu>
+<div class="container">
+    <div class="heading">Set Minimum Quantity</div>
+    <form class="form">
+      <div class="row">
+        <div class="col-3">
+          <label for="productId">Product Name</label>
+          <input type="text" class="form-control" [(ngModel)]="product.productName" name="productName">
+        </div>
+        <div class="col-3">
+          <label for="minQuantity">Minimum Quantity</label>
+          <input type="number" class="form-control" [(ngModel)]="product.minQuantity" name="minQuantity">
+        </div>
+        <div class="col-3">
+          <button type="button" class="btn btn-primary" (click)="setMinQuantity()">Set Minimum Quantity</button>
+        </div>
+      </div>
+    </form>
+  </div>
+ 

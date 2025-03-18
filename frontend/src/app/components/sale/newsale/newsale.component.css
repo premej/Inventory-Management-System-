@@ -1,0 +1,104 @@
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.card-header {
+    padding: 15px;
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.card-body .col-3 {
+    flex: 1 1 45%;
+    margin-bottom: 15px;
+}
+
+.card-body .col-3:nth-child(2n) {
+    margin-right: 20px;
+}
+
+.card-body .col-3:nth-child(2n+1) {
+    margin-right: 25px;
+}
+
+.card-body label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.card-body .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.card-body .form-control:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.card-body .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-body .btn-secondary {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.card-body .btn-secondary:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+.card-body .btn-success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.card-body .btn-success:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.stock-availability {
+    background-color: #e0ffe0; /* Light green background */
+    border: 1px solid #28a745; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding */
+    color: #155724; /* Dark green text */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Centered text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}

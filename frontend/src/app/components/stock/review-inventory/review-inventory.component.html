@@ -1,0 +1,27 @@
+<app-sidebar></app-sidebar>
+<app-stockmenu></app-stockmenu>
+<div class="review-inventory">
+    <h2>Stock Review Inventory</h2>
+    <div class="stock-cards">
+        <div class="stock-card" *ngFor="let item of stockList">
+            <h3>📦 {{ item.productName }}</h3>
+            <p><strong>Item ID:</strong> {{ item.productId }}</p>
+            <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+            <p><strong>Price:</strong> {{ item.price | currency: 'INR'}}</p>
+            <p><strong>Minimum Quantity:</strong> {{ item.minquantity }}</p>
+            <p><strong>Maximum Quantity:</strong> {{ item.maxquantity }}</p>
+            <button (click)="openModal(item)">Update Price</button>
+        </div>
+    </div>
+</div>
+<div class="modal" [class.show]="isModalOpen">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>Update Price</h2>
+        <form (ngSubmit)="submitPriceUpdate()">
+            <label for="newPrice">New Price:</label>
+            <input type="number" id="newPrice" [(ngModel)]="newPrice" name="newPrice" required>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>

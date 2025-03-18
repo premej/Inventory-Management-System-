@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container">
+  <!-- Admin Login Form -->
+  <h1>User Login</h1>
+  <div class="heading">Sign In</div>
+  <form (ngSubmit)="onLogin()" [formGroup]="loginForm" class="form">
+    <input required class="input" type="email" formControlName="email" placeholder="E-mail">
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">
+        Email is required and must be a valid email address.
+      </div>
+    <input required class="input" type="password" formControlName="password" placeholder="Password">
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error">
+        Password is required and must be at least 6 characters long.
+      </div>
+    <input class="login-button" type="submit" value="Sign In" [disabled]="loginForm.invalid">
+    <span class="newuser"><a (click)="navigateTo('/login1')">Admin Login?</a></span>
+    <span class="newuser"><a (click)="navigateTo('/register')">New User ?</a></span>
+  </form>
+</div>
+ <app-footer></app-footer>

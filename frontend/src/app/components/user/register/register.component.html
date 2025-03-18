@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container">
+  <h1>Register</h1>
+  <div class="heading">Sign Up</div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="form">
+    <input required class="input" type="text" formControlName="username" placeholder="Username">
+    <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="error">
+      Username is required.
+    </div>
+    <input required class="input" type="email" formControlName="email" placeholder="E-mail">
+    <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="error">
+      Email is required and must be a valid email address.
+    </div>
+    <input required class="input" type="password" formControlName="password" placeholder="Password">
+    <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="error">
+      Password is required and must be at least 6 characters long.
+    </div>
+    <input class="login-button" type="submit" value="Register" [disabled]="registerForm.invalid">
+    <span class="newuser"><a (click)="navigateTo('/login')">Login?</a></span>
+  </form>
+</div>
+<app-footer></app-footer>

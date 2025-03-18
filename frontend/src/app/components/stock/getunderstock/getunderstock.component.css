@@ -1,0 +1,49 @@
+.review-inventory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 4;
+}
+
+.stock-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stock-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  padding: 20px;
+  margin: 20px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.stock-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(31, 38, 135, 0.37);
+}
+
+.stock-card h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: darkslateblue;
+}
+
+.stock-card p {
+  margin: 5px 0;
+  font-size: 1em;
+  font-weight: bold;
+  color: #032663;
+}
+
+.stock-card p strong {
+  color: #032663;
+}

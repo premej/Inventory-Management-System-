@@ -1,0 +1,21 @@
+<app-sidebar></app-sidebar>
+<app-productmenu></app-productmenu>
+<div class="container">
+    <div class="heading">Update Product Price</div>
+    <form class="form">
+      <div class="row">
+        <div class="col-3">
+          <label for="productId">Product ID</label>
+          <input type="number" class="form-control" [(ngModel)]="product.id" name="productId">
+        </div>
+        <div class="col-3">
+          <label for="amount">New Amount</label>
+          <input type="number" class="form-control" [(ngModel)]="product.amount" name="amount">
+        </div>
+        <div class="col-3">
+          <button type="button" class="btn btn-primary" (click)="updateProductPrice()">Update Price</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

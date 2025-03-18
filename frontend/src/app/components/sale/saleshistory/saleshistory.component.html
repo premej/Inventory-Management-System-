@@ -1,0 +1,17 @@
+<app-sidebar></app-sidebar>
+<app-salesmenu></app-salesmenu>
+<div class="container">
+  <div class="heading">Sales History</div>
+  <div class="card-container">
+    <div class="card" *ngFor="let sale of salesList">
+      <div class="card-content">
+        <h3>💰 {{ sale.productName }}</h3>
+        <p><strong>Type:</strong> {{ sale.type }}</p>
+        <p><strong>Date:</strong> {{ sale.date | date:'short' }}</p>
+        <p><strong>Amount:</strong> {{ sale.amount | currency:'INR' }}</p>
+        <p><strong>Customer Name:</strong> {{ sale.customerName }}</p>
+        <p><strong>Quantity:</strong> {{ sale.quantity }}</p>
+      </div>
+    </div>
+  </div>
+</div>

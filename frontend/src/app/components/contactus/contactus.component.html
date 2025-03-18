@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="contact-us-container">
+  <div class="glass-card">
+    <h1>Contact Us <i class="fas fa-envelope"></i></h1>
+    <p>If you have any questions or need assistance, please feel free to reach out to us.</p>
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="form">
+      <input required class="input" type="text" formControlName="name" placeholder="Your Name">
+      <input required class="input" type="email" formControlName="email" placeholder="Your Email">
+      <textarea required class="input" formControlName="message" placeholder="Your Message"></textarea>
+      <input class="submit-button" type="submit" value="Send Message" [disabled]="contactForm.invalid">
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

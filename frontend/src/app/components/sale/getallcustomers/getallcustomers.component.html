@@ -1,0 +1,48 @@
+<app-sidebar></app-sidebar>
+<app-salesmenu></app-salesmenu>
+<div class="customers">
+    <h2>Customers</h2>
+    <button class="add-customer-btn" (click)="showAddCustomerForm = true">Add New Customer</button>
+    
+    <div *ngIf="showAddCustomerForm" class="add-customer-form">
+        <h3>Add New Customer</h3>
+        <form (ngSubmit)="onAddCustomer()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" [(ngModel)]="newCustomer.name" name="name" required>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" [(ngModel)]="newCustomer.phoneNumber" name="phoneNumber" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="newCustomer.email" name="email" required>
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="button" class="cancel-btn" (click)="showAddCustomerForm = false">Cancel</button>
+        </form>
+    </div>
+    
+    <div *ngIf="editCustomer" class="edit-customer-form">
+        <h3>Edit Customer</h3>
+        <form (ngSubmit)="onUpdateCustomer()">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" [(ngModel)]="editCustomer.customerName" name="editName" required>
+            <label for="editPhoneNumber">Phone Number:</label>
+            <input type="text" id="editPhoneNumber" [(ngModel)]="editCustomer.phoneNumber" name="editPhoneNumber" required>
+            <label for="editEmail">Email:</label>
+            <input type="email" id="editEmail" [(ngModel)]="editCustomer.email" name="editEmail" required>
+            <button type="submit" class="submit-btn">Update</button>
+            <button type="button" class="cancel-btn" (click)="editCustomer = null">Cancel</button>
+        </form>
+    </div>
+    
+    <div class="card-container">
+        <div class="card" *ngFor="let customer of customersList">
+            <div class="card-content">
+                <i class="fa fa-user fa-2x"></i>
+                <h3>{{ customer.customerName }}</h3>
+                <p><strong>Customer ID:</strong> {{ customer.id }}</p>
+                <p><strong>Email:</strong> {{ customer.email }}</p>
+                <p><strong>Phone:</strong> {{ customer.phoneNumber }}</p>
+                <button class="edit-btn" (click)="onEditCustomer(customer)">Edit</button>
+                <button class="delete-btn" (click)="onDeleteCustomer(customer.id)">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+body{
+    background-color: #1089d3;
+    
+}
+.user-cards {
+    display: flex;
+    justify-content:space-evenly;
+    height : 90vh;
+    background-image: url("../../../../public/img/backimg.jpeg");
+    background-size:cover; 
+    border-radius: 18px;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    width: 200px;
+    height : 125px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color:aliceblue;
+    margin-top: 250px;
+  }
+  
+  mat-icon, .fa-user {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: blue;
+  }
+ 
+  .card:hover {
+    transform: scale(1.05);
+  }
+ 
+ 
+  .card h3 {
+    margin-top: 10px;
+    color: black;
+  }
+ 

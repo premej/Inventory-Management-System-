@@ -1,0 +1,61 @@
+<!-- <app-adminsb></app-adminsb> -->
+<nav class="main-menu">
+    <div>
+      <a class="logo" href="#"></a>
+    </div>
+    <div class="settings"></div>
+    <div class="user-info">
+      <i class="fas fa-user-circle user-icon" (click)="toggleUserDetails()"></i>
+    </div>
+    <div class="user-details" *ngIf="showUserDetails">
+      <p><strong>Name:</strong> {{ username }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Role:</strong> {{ role }}</p>
+    </div>
+    <div class="scrollbar" id="style-1">
+      <ul>
+        <!-- <li>
+          <a (click)="navigateTo('controls')">
+            <i class="fa fa-tasks fa-lg"></i>
+            <span class="nav-text">Admin Controls</span>
+          </a>
+        </li> -->
+        <li>
+          <a (click)="navigateTo('reviewinventory')">
+            <i class="fa fa-archive fa-lg"></i>
+            <span class="nav-text">Stock</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="navigateTo('newproduct')">
+            <i class="fa fa-box fa-lg"></i>
+            <span class="nav-text">Product</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="navigateTo('newpurchase')">
+            <i class="fa fa-shopping-cart fa-lg"></i>
+           <span class="nav-text">Purchases</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="navigateTo('newsale')">
+            <i class="fa fa-chart-line fa-lg"></i>
+            <span class="nav-text">Sales</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="navigateTo('alltransactions')">
+            <i class="fa fa-exchange-alt fa-lg"></i>
+            <span class="nav-text">Transactions</span>
+          </a>
+        </li>
+        <li>
+          <a (click)="navigateTo('')">
+            <i class="fa fa-sign-out-alt fa-lg"></i>
+            <span class="nav-text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>

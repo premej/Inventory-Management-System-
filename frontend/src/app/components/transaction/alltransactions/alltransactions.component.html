@@ -1,0 +1,18 @@
+<app-sidebar></app-sidebar>
+<app-transactionmenu></app-transactionmenu>
+<div class="transactions">
+  <h2>Transactions</h2>
+  <div class="card-container">
+    <div class="card" *ngFor="let transaction of transactionsList">
+      <div class="card-content">
+        <h3>💸 {{ transaction.productname }}</h3>
+        <p><strong>Type:</strong> {{ transaction.type }}</p>
+        <p><strong>Date:</strong> {{ transaction.date | date:'short' }}</p>
+        <p><strong>Amount:</strong> {{ transaction.amount | currency:'INR' }}</p>
+        <p><strong>Before Stock:</strong> {{ transaction.before_stock }}</p>
+        <p><strong>After Stock:</strong> {{ transaction.after_stock }}</p>
+        <p><strong>Quantity:</strong> {{ transaction.quantity }}</p>
+      </div>
+    </div>
+  </div>
+</div>

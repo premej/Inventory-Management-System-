@@ -1,0 +1,20 @@
+<app-sidebar></app-sidebar>
+<app-transactionmenu></app-transactionmenu>
+<div class="product-transactions">
+  <h2>Product Transactions</h2>
+  <div class="input-group">
+    <input type="number" [(ngModel)]="productId" placeholder="Enter Product ID" />
+    <button (click)="getProductTransactions()">Get Transactions</button>
+  </div>
+  <div class="card-container" *ngIf="productTransactions.length > 0">
+    <div class="card" *ngFor="let transaction of productTransactions">
+      <div class="card-content">
+        <h3>💸 {{ transaction.productName }}</h3>
+        <p><strong>Type:</strong> {{ transaction.type }}</p>
+        <p><strong>Date:</strong> {{ transaction.date | date:'short' }}</p>
+        <p><strong>Quantity:</strong> {{ transaction.quantity }}</p>
+        <p><strong>Amount:</strong> {{ transaction.amount | currency:'INR' }}</p>
+      </div>
+    </div>
+  </div>
+</div>

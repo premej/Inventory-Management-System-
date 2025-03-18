@@ -1,0 +1,32 @@
+<app-sidebar></app-sidebar>
+<app-purchasemenu></app-purchasemenu>
+<div class="container">
+    <div class="heading">Purchase Report</div>
+    <form class="form">
+        <div class="row">
+            <div class="col-3">
+                <label for="fromDate">From Date :</label>
+                <input type="date" class="form-control" [(ngModel)]="fromDate" name="fromDate">
+            </div>
+            <div class="col-3">
+                <label for="toDate">To Date :</label>
+                <input type="date" class="form-control" [(ngModel)]="toDate" name="toDate">
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary" (click)="filterPurchases()" id="fil">Filter</button>
+            </div>
+        </div>
+    </form>
+    <div class="card-container">
+        <div class="card" *ngFor="let purchase of filteredPurchases">
+            <div class="card-content">
+                <h3>📦 {{ purchase.productName }}</h3>
+                <p><strong>Type:</strong> {{ purchase.type }}</p>
+                <p><strong>Date:</strong> {{ purchase.date | date:'short' }}</p>
+                <p><strong>Amount:</strong> {{ purchase.amount | currency:'INR'}}</p>
+                <p><strong>Supplier Name:</strong> {{ purchase.supplierName }}</p>
+                <p><strong>Quantity:</strong> {{ purchase.quantity }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<h1>Dashboard</h1>
+    <i class="fas fa-sign-out-alt logout-icon" (click)="navigateTo('')">Logout</i>
+<div class="user-cards">
+  <div class="card" (click)="navigateTo('pendingreq')">
+    <i class="fas fa-user-check"></i>
+    <h3>User Approvals</h3>
+  </div>
+  <div class="card" (click)="navigateTo('outofstock')">
+    <i class="fas fa-boxes"></i>
+    <h3>Manage Inventory</h3>
+  </div>
+</div>
